@@ -1,4 +1,4 @@
-# IMPORTING THE REQUIRED MODULES IN THE WORK DIRECTORY
+# IMPORTING THE REAQUIRED 
 import streamlit as stream
 import pandas as panda
 import numpy as num
