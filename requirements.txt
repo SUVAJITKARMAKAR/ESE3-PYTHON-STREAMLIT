@@ -6,4 +6,4 @@ matplotlib
 seaborn
 scikit-learn
 textblob
-python-opencv
+opencv-python
