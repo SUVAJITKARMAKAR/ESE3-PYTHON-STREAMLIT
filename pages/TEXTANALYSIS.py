@@ -14,6 +14,14 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
+# SETTING THE PAGE CONFIGURATION
+stream.set_page_config(
+    page_title="TEXTANALYSIS",
+    page_icon=":rocket",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # Function to preprocess text
 def preprocess_text(text):
     # TOKENIZATION

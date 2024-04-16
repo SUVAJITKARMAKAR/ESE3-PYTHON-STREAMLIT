@@ -6,6 +6,14 @@ import time
 
 nltk.download('punkt')
 
+# SETTING THE PAGE CONFIGURATION
+stream.set_page_config(
+    page_title="SENTIMENTANALYSIS",
+    page_icon=":heart",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # Function to perform sentiment analysis
 def perform_sentiment_analysis(text):
     analysis = TextBlob(text)
