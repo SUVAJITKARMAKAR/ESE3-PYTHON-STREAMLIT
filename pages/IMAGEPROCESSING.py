@@ -61,6 +61,8 @@ def process_image(image, operations):
             threshold_value = stream.sidebar.slider('Threshold Value:', min_value=0, max_value=255, value=128)
             gray_image = cv.cvtColor(processed_image, cv.COLOR_BGR2GRAY)
             _, processed_image = cv.threshold(gray_image, threshold_value, 255, getattr(cv, f'THRESH_{threshold_type.upper()}'))
+        elif operation == 'Grayscale':
+            processed_image = cv.cvtColor(processed_image, cv.COLOR_BGR2GRAY)
 
     return processed_image
 
@@ -73,7 +75,7 @@ def main():
 
     # SIDEBAR OPTIONS
     stream.sidebar.header("IMAGE PROCESSING OPTIONS")
-    operations = stream.sidebar.multiselect("OPERATIONS:", ['Resize', 'Crop', 'Rotate', 'Translate', 'Blur', 'Change Color', 'Thresholding'])
+    operations = stream.sidebar.multiselect("OPERATIONS:", ['Resize', 'Crop', 'Rotate', 'Translate', 'Blur', 'Change Color', 'Thresholding', 'Grayscale'])
 
     if uploaded_file is not None:
         image = num.array(Image.open(uploaded_file))
@@ -88,3 +90,4 @@ def main():
 # MAIN OPERATION INITIALITION POINT 
 if __name__ == "__main__":
     main()
+
