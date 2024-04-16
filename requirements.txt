@@ -1,0 +1,11 @@
+pandas
+numpy
+nltk
+streamlit
+matplotlib
+seaborn
+scikit-learn
+io
+time
+textblob
+python-opencv
