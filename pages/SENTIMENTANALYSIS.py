@@ -1,6 +1,7 @@
-import streamlit as st
+import streamlit as stream
 from textblob import TextBlob
 import nltk
+import time
 
 
 nltk.download('punkt')
@@ -18,29 +19,32 @@ def perform_sentiment_analysis(text):
 
 # Main function
 def main():
-    st.title("Sentiment Analysis")
+    stream.title("SENTIMENT ANALYSIS")
     
     # Text input
-    text_option = st.radio("Select text input option:", ("Upload Text File", "Write Text"))
-    text = None  # Initialize text variable
+    text_option = stream.radio("SELECT A TEXT INPUT TO CONTINUE", ("Upload Text File", "Write Text"))
+    text = None  
     
     if text_option == "Upload Text File":
-        uploaded_file = st.file_uploader("Upload a text file", type=["txt"])
+        uploaded_file = stream.file_uploader("UPLAOD A TEXT FILE", type=["txt"])
         if uploaded_file is not None:
             text = uploaded_file.read()
-            st.write("Text Uploaded Successfully!")
+            stream.successs("TEXT UPLOADED SUCCESSFULLY")
     else:
-        text = st.text_area("Write your text here:")
+        text = stream.text_area("WRITE YOUR TEXT HERE : :")
     
-    if text is not None:  # Check if text is assigned a value
-        if st.button("Perform Sentiment Analysis"):
-            st.write("Performing Sentiment Analysis...")
+    if text is not None:  
+        if stream.button("SENSE THE TONE"):
+            tone_sensation_info = stream.info("PERFORMING SENTIMENT ANALYSIS")
+            time.sleep(2)
+            tone_sensation_info.empty()
             
             # Perform sentiment analysis
             sentiment = perform_sentiment_analysis(text)
             
             # Display sentiment
-            st.write("Sentiment:", sentiment)
+            stream.subheader("SENTIMENT")
+            stream.success(sentiment)
 
 if __name__ == '__main__':
     main()
